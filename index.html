@@ -10,6 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 </head>
 <body>
@@ -17,12 +18,17 @@
 		<a href="/" class="logo-name">
 			<img src="images/logo1-bg.png" alt="logo">
 		</a>
-		<nav>
+		<button class="hamburger" aria-label="Toggle menu">
+			<i class="fas fa-bars"></i>
+		</button>
+		<nav class="nav-menu">
 			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/services">Services</a>
-			<a href="/contact">Contact Us</a>
+			<a href="/abou.html">About</a>
+			<a href="/services.html">Services</a>
+			<a href="/contact.html">Contact Us</a>
 		</nav>
+		<!-- <a href="#" class="appointment">Book Appointment</a> -->
+
 	</header>
 <!------------ Home Section ------------->
 	<section class="home-section">
@@ -31,7 +37,9 @@
 				<span class="span">Welcome To Hinckley Group Home</span>
 				<h2 class="hero-text">Quality Home Care for your Loved ones</h2>
 				<p>We provide compassionate, personalized care to ensure the comfort and well-being of your loved ones, offering peace of mind for families.</p>
-				<a href="#" class="button-contact">Contact Us</a>
+				<div class="btn-hero">
+					<a href="/services.html" class="button-service">Our Services</a>
+				</div>
 			</div>
 			<div class="image-side">
 				<img src="images/nurse-care4-bg.png">
@@ -40,9 +48,93 @@
 		</div>
 
 	</section>
-	<section>
 
+	<!--------- About Section --------->
+
+	<section class="about-section">
+		<div>
+			<h1 class="hero-text-2">About Us</h1>
+			<div class="about-section-div">
+				<div class="right">
+					<img src="images/approach1.png" alt="old people">
+				</div>
+				<div class="left">
+					<h2 class="caring">Caring for Your Loved Ones, Like Family</h2>
+					<p>Our personalized approach ensures that seniors receive the care they deserve, tailored to their individual needs and preferences and providing support and peace of mind throughout the care journey.</p>
+					<ul class="list">
+						<li><i class="fas fa-check"></i>Compassion</li>
+						<li><i class="fas fa-check"></i>Integrity</li>
+						<li><i class="fas fa-check"></i>Respect</li>
+						<li><i class="fas fa-check"></i>Compassion</li>
+						<li><i class="fas fa-check"></i>Care</li>
+						<li><i class="fas fa-check"></i>Dedication</li>
+						<li><i class="fas fa-check"></i>Support</li>
+						<li><i class="fas fa-check"></i>Commitment</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</section>
+
+
+
+	<!---------Services Section ------------>
+
+	<section class="services-section">
+		<div class="services-container">
+			<div class="services-intro">
+				<h2>Our Services</h2>
+				<h3>Explore Our Care Solutions</h3>
+				<p>Discover a range of compassionate and personalized care services designed to meet the unique needs of your loved ones. From personal assistance to maintaining a comfortable home, our solutions ensure safety, comfort, and peace of mind.</p>
+				<a href="/services.html" class="services">Our Services</a>
+			</div>
+			<div class="services-grid">
+				<div class="service-card">
+					<img src="images/Older-People-17.png" alt="Personal Care">
+					<h4>Personal Care</h4>
+					<p>We provide Around the clock RN services</p>
+				</div>
+				<div class="service-card">
+					<img src="images/Older-People-24.png" alt="Companion Care">
+					<h4>Companion Care</h4>
+					<p>Our caregivers offer friendly companionship to reduce loneliness and enhance emotional well-being through meaningful interactions.</p>
+				</div>
+				<div class="service-card">
+					<img src="images/Older-People-12.png" alt="Medication Management">
+					<h4>Medication Management</h4>
+					<p>Stay on track with medications safely and accurately with our reliable support and reminders for your loved ones.</p>
+				</div>
+				<div class="service-card">
+					<img src="images/Older-People-27.png" alt="Meal Preparation">
+					<h4>Meal Preparation</h4>
+					<p>Enjoy nutritious, home-cooked meals tailored to dietary needs, promoting health and satisfaction every day.</p>
+				</div>
+				<div class="service-card">
+					<img src="images/home-main.png" alt="Home Maintenance">
+					<h4>Home Maintenance</h4>
+					<p>We help with light housekeeping and upkeep, creating a clean and safe living environment for your loved ones.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<!-- ----------section  -->
+
+
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const hamburger = document.querySelector(".hamburger");
+			const navMenu = document.querySelector(".nav-menu");
+		
+			hamburger.addEventListener("click", () => {
+				navMenu.classList.toggle("active");
+			});
+		});
+	</script>
 
 </body>
 </html>

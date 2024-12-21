@@ -27,6 +27,11 @@ header{
 	padding: 0;
 	width: 150px;
 }
+.nav-menu {
+    display: flex;
+    gap: 20px;
+	transition: all 0.3s ease;
+}
 nav a{
 	font-size: 18px;
     border-radius: .5rem;
@@ -36,9 +41,58 @@ nav a{
 nav a:hover{
     color: var(--purple);
 }
+.appointment {
+	margin: 0px 20px;
+    background: var(--purple);
+    color: var(--lighter);
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+	font-weight: 500;
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.appointment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--purple), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    transition: transform 0.4s ease;
+    transform: translateX(0);
+    z-index: 0;
+}
+.appointment:hover::before {
+    transform: translateX(100%);
+}
 
+.appointment:hover {
+    background: var(--lighter);
+    color: var(--purple);
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
 
-/* -------scetion 1------------ */
+.appointment {
+    z-index: 1;
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+	margin-right: 2rem;
+    color: var(--black);
+}
+/* -------section 1------------ */
 
 .home-section .side{
 	display: flex;
@@ -51,6 +105,7 @@ nav a:hover{
 .content {
 	margin-left: 10px;
     display: flex;
+	padding: 20px;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
@@ -74,14 +129,15 @@ nav a:hover{
     transform: translateX(0)
 }
 .span{
-	font-size: 28px;
-	font-weight: 600;
-	color: var(--black);
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 2vw;
+	font-weight: 500;
+	color: var(--purple);
 	margin: 20px 10px;
 }
 .hero-text{
 	font-family: 'Times New Roman', Times, serif;
-	font-size: 80px;
+	font-size: 5vw;
 	font-weight: 500;
 }
 .image-side{
@@ -91,26 +147,207 @@ nav a:hover{
 .image-side img {
 	width: 100%;
 	height: auto;
+	border-radius: 10px;
 }
-.content .button-contact{
+
+.btn-hero{
+	text-align: center;
+	margin-top: 50px;
+	flex-wrap: wrap;
+}
+.button-contact{
 	background-color: var(--purple);
+	padding: 10px 35px;
 	color: var(--lighter);
-	padding: 20px;
+	font-weight: 300;
+	font-size: 16px;
+	padding: 10px;
+	border-radius: 5px;
 	margin-top: 50px;
 	text-align: center;
 	width: 200px;
 }
+.button-service{
+	background-color: var(--purple);
+	padding: 10px 25px;
+	color: var(--lighter);
+	font-weight: 300;
+	font-size: 16px;
+	padding: 10px;
+	border-radius: 5px;
+	margin-top: 50px;
+	text-align: center;
+}
 
+.content .button-contact:hover{
+	background-color: #37285e;
+}
 .content p{
 	font-size: 20px;
 	margin-top: 20px;
+	line-height: 35px;
+}
+
+/* ----------- section-2 --------------- */
+
+.about-section {
+	margin-top: 50px;
+	padding: 20px;
+	background: var(--lighter);
+}
+.hero-text-2{
+	font-family: 'Times New Roman', Times, serif;
+	text-align: center;
+	color: var(--purple);
+	font-size: 2.5rem;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.caring{
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 1.8rem;
+	font-weight: 500;
+	color: var(--purple);
+	margin: 10px 0;
+}
+
+.about-section-div{
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 20px;
+	justify-content: space-between;
+	align-items: center;
+}
+.left, .right {
+    flex: 1 1 100%; /* Default to full width */
+    padding: 20px; /* Add padding */
 }
 
 
+.right {
+    background: var(--black);
+	border-radius: 20px;
+	align-items: center;
+	overflow: hidden;
+	text-align: center;
+}
 
 
+.left {
+	padding: 30px;
+    flex-direction: column;
+
+}
 
 
+.left p{
+	font-size: 1rem;
+	margin: 10px 10px;
+	line-height: 30px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+	justify-content: space-between;
+    padding: 0;
+}
+
+.list li {
+	padding: 10px;
+    flex: 1 1 calc(50% - 1.2rem); /* Each item takes half the width, minus the gap */
+    display: flex;
+    align-items: center;
+}
+.fa-check {
+	margin-right: 20px;
+	font-size: 1.2rem;
+	color: #5a7f3d;
+
+}
+
+
+/* -----------------Service Section ------------------ */
+.services-section {
+    padding: 40px;
+    background-color: #f8f8f8; /* Light background */
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-intro h2 {
+    color: var(--purple);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.services-intro h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+	font-weight: 400;
+	text-align: center;
+
+}
+
+.services-intro p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+	text-align: left;
+    line-height: 1.6;
+}
+
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center content within card */
+    display: flex; /* Enable flexbox for vertical alignment */
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.service-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+	color: var(--purple);
+}
+
+.service-card p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows paragraph to take up available space */
+	text-align: center;
+}
+
+.learn-more-link {
+    text-decoration: none;
+    color: var(--purple);
+    font-weight: bold;
+}
 
 
 
@@ -123,6 +360,55 @@ nav a:hover{
 
 
 /*--------- Responsivenes-------------- */
+
+@media (max-width: 1250px) {
+	.home-section .side {
+	  flex-wrap: wrap; /* Stacks items vertically */
+	  justify-content: center; /* Centers the content */
+	}
+  
+	.content {
+	  margin-left: 0;
+	  height: auto; /* Adjust height for smaller screens */
+	  text-align: center; /* Center-align text content */
+	}
+  
+	.span {
+	  font-size: 20px; /* Reduce font size */
+	}
+  
+	.hero-text {
+	  font-size: 7vw; /* Scale down heading font size */
+	}
+  
+	.image-side {
+	  flex: 0 0 100%; /* Make the image take full width */
+	  text-align: center;
+	}
+  
+	.image-side img {
+	  width: 100%; /* Scale image size for smaller screens */
+	  margin: 0 auto;
+	}
+  
+	.content .button-contact {
+	  margin: 20px auto; /* Center the button */
+	  width: 150px; /* Reduce button width */
+	}
+
+	.caring {
+        font-size: 1.5rem;
+    }
+	.about-section-div {
+        flex-wrap: wrap; /* Stack vertically only on smaller screens */
+        justify-content: center; /* Center items for small screens */
+        gap: 20px; /* Reduce gap for smaller screens */
+    }
+	.left, .right {
+        flex: 1 1 100%; /* Make each div take the full width on smaller screens */
+    }
+  }
+
 @media (max-width: 768px) {
 	.home-section .side {
 	  flex-wrap: wrap; /* Stacks items vertically */
@@ -140,7 +426,7 @@ nav a:hover{
 	}
   
 	.hero-text {
-	  font-size: 50px; /* Scale down heading font size */
+	  font-size: 7vw; /* Scale down heading font size */
 	}
   
 	.image-side {
@@ -157,12 +443,40 @@ nav a:hover{
 	  margin: 20px auto; /* Center the button */
 	  width: 150px; /* Reduce button width */
 	}
+	.about-section-div {
+        flex-wrap: wrap; /* Stack vertically only on smaller screens */
+        justify-content: center; /* Center items for small screens */
+        gap: 20px; /* Reduce gap for smaller screens */
+    }
+	.left, .right {
+        flex: 1 1 100%; /* Make each div take the full width on smaller screens */
+    }
+	.nav-menu {
+        display: none;
+        flex-direction: column;
+		z-index: 1000;
+        position: absolute;
+        top: 60px;
+        background: #FFF;
+        box-shadow: var(--box-shadow);
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+	.nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
   }
   
+ 
   /* Media Query for Extra Small Screens */
   @media (max-width: 480px) {
 	.hero-text {
-	  font-size: 40px; /* Further scale down heading font size */
+	  font-size: 9vw; /* Further scale down heading font size */
 	}
   
 	.span {
@@ -173,4 +487,23 @@ nav a:hover{
 	  width: 120px; /* Reduce button width further */
 	  padding: 15px; /* Adjust button padding */
 	}
+	.caring {
+        font-size: 1.2rem;
+    }
+    .left p {
+        font-size: 0.9rem;
+    }
+    .fa-check {
+        font-size: 1rem;
+    }
+	.about-section-div {
+        flex-wrap: wrap; /* Stack vertically only on smaller screens */
+        justify-content: center; /* Center items for small screens */
+        gap: 20px; /* Reduce gap for smaller screens */
+    }
+	.left, .right {
+        flex: 1 1 100%; /* Make each div take the full width on smaller screens */
+        text-align: center; /* Center content for smaller screens */
+    }
+
   }
