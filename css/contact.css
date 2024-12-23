@@ -55,6 +55,14 @@ nav a:hover{
     overflow: hidden;
     transition: transform 0.3s ease, background 0.3s ease;
 }
+
+.title {
+	text-align: center;
+	font-weight: 500;
+	font-size: 4rem;
+	color: var(--purple);
+	margin: 30px 0;
+}
 .appointment::before {
     content: '';
     position: absolute;
@@ -93,166 +101,118 @@ nav a:hover{
     color: var(--black);
 }
 
+/* -----------------Contact Session-------------------------------- */
 
-/* ----------------services ----------------- */
-
-
-
-.services {
+.contact-section {
+    padding: 40px;
     background-color: #f8f8f8; /* Light background */
 }
 
-.title {
-    text-align: center;
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 40px;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.contact-info {
+    flex: 1 1 400px; /* Flexible width with a minimum of 400px */
+}
+
+.contact-form {
+    flex: 1 1 400px; /* Flexible width with a minimum of 400px */
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
     color: var(--purple);
     font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 25px;
-    line-height: 1.3;
-}
-/* -------------------------------------------- */
-.section-service {
-    position: relative;
-    width: 100%; /* Ensures the div fills the entire width */
-    max-height: 480px;
-    overflow: hidden;
-}
-
-.section-service img {
-    width: 100%; /* Makes the image responsive */
-    object-fit: cover;
-    height: auto;
-    display: block;
-    filter: brightness(50%) hue-rotate(270deg); /* Adds purple tint and slight transparency */
-}
-
-.section-service .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centers the text */
-    color: white;
-    font-size: 2.4rem;
-    text-align: center;
-	font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
-    z-index: 2; /* Ensures the text is on top */
-    padding: 0 10px;
-    white-space: nowrap;
-}
-
-.section-service::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(128, 0, 128, 0.3); /* Purple overlay */
-    z-index: 1; /* Places the overlay below the text */
-}
-
-
-
-/* ------------------------------------- */
-.services-container { /* Style the container */
-    max-width: 1200px; /* Limit container width */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Spacing between cards */
-    padding: 20px; /* Add padding to container */
-}
-
-.service-card {
-    
-    background-color: white;
-    border-radius: 8px;
-    max-width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    margin-bottom: 20px;
-    overflow: hidden; /* Prevent content overflow */
-}
-
-.service-card img {
-    width: 100%; /* Responsive width */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 300px; /* Limit height */
-    object-fit: cover; /* Crop image instead of distorting */
-    border-radius: 8px; /* Rounded corners */
-    margin-bottom: 20px;
-}
-
-.card-content { /* Style the content wrapper */
-    text-align: center; /* Center text within the card */
-}
-
-.service-card h2 {
-    font-size: 1.2rem;
-    text-align: left;
+	font-weight: 500;
     margin-bottom: 10px;
-    margin-left: 15px;
-    font-weight: 400;
-    color: var(--purple);
-}
-.fa-stethoscope{
-    padding: 15px;
-    color: green;
-}
-.fa-medkit{
-    padding: 15px; 
-    color: red;
-}
-.fa-cutlery{
-    padding: 15px; 
-
-}
-.fa-clock-o{
-    padding: 15px; 
-
-}
-.fa-credit-card{
-    padding: 15px; 
-    color: blue;
-
-}
-.fa-plus{
-    padding: 15px; 
-    color: red;
-}
-.fa-users{
-    padding: 15px; 
-    color: blue;
-}
-.fa-plus-square{
-    padding: 15px; 
-    color: red;
 }
 
-.fa-wifi{
-    padding: 15px; 
-    color: green;
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.fa-bolt{
-    padding: 15px;
-    color: orange;
+.contact-info p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
 
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.fa-car{
-    padding: 15px;
-    color: blue;
+
+.address,
+.opening-hours {
+    flex: 1 1 180px; /* Adjust as needed */
 }
-.service-card p {
-    line-height: 1.6;
-    font-size: 1rem;
-    text-align: left;
-    margin-left: 15px;
-    margin-bottom: 0; /* Remove default bottom margin */
-    flex-grow: 1; /* Allow paragraph to expand */
+
+.form-group {
+    margin-bottom: 20px;
 }
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.submit-btn {
+    background-color: var(--purple);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Full width button */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .contact-info {
+        text-align: center; /* Center text on smaller screens */
+    }
+    .contact-details {
+        justify-content: center; /* Center contact details */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.3rem;
+    }
+}
+
+
 
 /* ---------------------Footer----------------------- */
 .footer {
@@ -376,11 +336,6 @@ nav a:hover{
 
 
 
-
-
-
-
-
 /*--------- Responsivenes-------------- */
 
 @media (max-width: 768px) {
@@ -404,24 +359,47 @@ nav a:hover{
         display: block;
     }
     .title {
-        font-size: 1.8rem;
+        font-size: 4rem;
     }
-    .services-container {
-        grid-template-columns: 1fr; /* Single column layout */
-    }
-    .service-card {
-        width: 100%; /* Ensure the card fills the width */
-        flex-direction: column;
-
-    }
-    .service-card h2 {
-        font-size: 1.3rem;
-    }
-    .section-service .title {
-        font-size: 1.5rem; /* Smaller font size for tablets */
-        padding: 0 15px; /* Reduces padding */
-    }
-  }
+	.content {
+		margin-left: 0;
+		height: auto; /* Adjust height for smaller screens */
+		text-align: center; /* Center-align text content */
+	  }
+	
+	  .span {
+		font-size: 20px; /* Reduce font size */
+	  }
+	
+	  .hero-text {
+		font-size: 7vw; /* Scale down heading font size */
+	  }
+	
+	  .image-side {
+		flex: 0 0 100%; /* Make the image take full width */
+		text-align: center;
+	  }
+	
+	  .image-side img {
+		width: 100%; /* Scale image size for smaller screens */
+		margin: 0 auto;
+	  }
+	  .home-section .side {
+		flex-wrap: wrap; /* Stacks items vertically */
+		justify-content: center; /* Centers the content */
+	  }
+	
+	  .content .button-contact {
+		margin: 20px auto; /* Center the button */
+		width: 150px; /* Reduce button width */
+	  }
+	  .why-choose-us .content {
+		flex-direction: column;
+	  }
+	  .why-choose-us .image {
+		margin-bottom: 20px;
+	  }
+}
   
  
   /* Media Query for Extra Small Screens */
@@ -435,17 +413,22 @@ nav a:hover{
 	}
   
     .title {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
-    .service-card h2 {
-        font-size: 1.1rem;
-    }
-    .service-card p {
-        font-size: 0.9rem;
-    }
-    .section-service .title {
-        font-size: 1.2rem; /* Smaller font size for mobile devices */
-        padding: 0 10px; /* Further reduce padding */
-    }
+	.hero-text {
+		font-size: 9vw; /* Further scale down heading font size */
+	  }
+	
+	  .span {
+		font-size: 18px; /* Reduce font size for span */
+	  }
+	  .home-section .side {
+		flex-wrap: wrap; /* Stacks items vertically */
+		justify-content: center; /* Centers the content */
+	  }
+	  .content .button-contact {
+		width: 120px; /* Reduce button width further */
+		padding: 15px; /* Adjust button padding */
+	  }
 
   }
